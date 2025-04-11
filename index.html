@@ -19,9 +19,8 @@
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: relative;
+            text-align: center;
             padding: 20px 50px;
             border-bottom: 1px solid #ddd;
         }
@@ -31,6 +30,13 @@
             font-size: 28px;
         }
 
+        .social-icons {
+            position: absolute;
+            top: 50%;
+            right: 50px;
+            transform: translateY(-50%);
+        }
+
         .social-icons a {
             margin-left: 15px;
             text-decoration: none;
@@ -38,23 +44,24 @@
             font-size: 18px;
         }
 
-        .container {
-            display: flex;
-            flex: 1;
-        }
-
         nav {
-            width: 200px;
-            border-right: 1px solid #ddd;
-            padding: 30px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
         }
 
         nav a {
             display: block;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             text-decoration: none;
             color: #1a1a1a;
-            font-size: 18px;
+            font-size: 16px;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            padding-top: 20px;
         }
 
         main {
@@ -101,14 +108,17 @@
         }
 
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
+            nav {
+                position: static;
+                text-align: center;
+                margin-bottom: 20px;
             }
 
-            nav {
-                width: 100%;
-                border-right: none;
-                border-bottom: 1px solid #ddd;
+            .social-icons {
+                position: static;
+                transform: none;
+                text-align: center;
+                margin-top: 10px;
             }
 
             main {
@@ -120,6 +130,11 @@
 
 <body>
     <header>
+        <nav>
+            <a href="blog.html">Blog</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="contato.html">Contato</a>
+        </nav>
         <h1>Isabelle Fazzion</h1>
         <div class="social-icons">
             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -129,20 +144,14 @@
     </header>
 
     <div class="container">
-        <nav>
-            <a href="#">Blog</a>
-            <a href="#">Sobre</a>
-            <a href="#">Contato</a>
-        </nav>
-
         <main>
-            <a href="#" class="card">
+            <a href="card1.html" class="card">
                 <h2>Título do Card 1</h2>
                 <p>Uma breve descrição sobre o conteúdo deste card para atrair o leitor.</p>
                 <span class="read-more">Ler mais</span>
             </a>
 
-            <a href="#" class="card">
+            <a href="card2.html" class="card">
                 <h2>Título do Card 2</h2>
                 <p>Uma breve descrição sobre o conteúdo deste card para atrair o leitor.</p>
                 <span class="read-more">Ler mais</span>
