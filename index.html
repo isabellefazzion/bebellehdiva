@@ -1,94 +1,154 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isabelle Fazzion</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             margin: 0;
+            padding: 0;
             font-family: 'Times New Roman', Times, serif;
-            background-color: #fff;
+            background-color: #ffffff;
             color: #1a1a1a;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
-            padding: 20px;
-            border-bottom: 1px solid #eee;
-            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            border-bottom: 1px solid #ddd;
         }
 
-        .social-icons {
-            position: absolute;
-            right: 20px;
-            top: 20px;
+        header h1 {
+            margin: 0;
+            font-size: 28px;
         }
 
         .social-icons a {
             margin-left: 15px;
-            color: #1a1a1a;
             text-decoration: none;
-            font-size: 20px;
+            color: #1a1a1a;
+            font-size: 18px;
         }
 
-        .cards {
+        .container {
             display: flex;
-            justify-content: center;
-            gap: 40px;
-            padding: 60px 20px;
+            flex: 1;
+        }
+
+        nav {
+            width: 200px;
+            border-right: 1px solid #ddd;
+            padding: 30px;
+        }
+
+        nav a {
+            display: block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 18px;
+        }
+
+        main {
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            justify-content: space-around;
             flex-wrap: wrap;
         }
 
         .card {
+            background-color: #fff;
             border: 1px solid #ddd;
             padding: 30px;
             width: 300px;
-            text-align: left;
-            transition: box-shadow 0.3s;
-            cursor: pointer;
+            margin: 20px;
+            text-align: center;
             text-decoration: none;
             color: inherit;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .card h2 {
             font-size: 22px;
-            margin-bottom: 10px;
         }
 
         .card p {
             font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            nav {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+
+            main {
+                padding: 20px;
+            }
         }
     </style>
 </head>
-<body>
 
+<body>
     <header>
         <h1>Isabelle Fazzion</h1>
         <div class="social-icons">
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
     </header>
 
-    <section class="cards">
-        <a href="pagina1.html" class="card">
-            <h2>Título do Primeiro Card</h2>
-            <p>Descrição breve do conteúdo. Clique para saber mais detalhes sobre este tema.</p>
-        </a>
+    <div class="container">
+        <nav>
+            <a href="#">Blog</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </nav>
 
-        <a href="pagina2.html" class="card">
-            <h2>Título do Segundo Card</h2>
-            <p>Descrição breve do conteúdo. Clique para descobrir mais informações interessantes.</p>
-        </a>
-    </section>
+        <main>
+            <a href="#" class="card">
+                <h2>Título do Card 1</h2>
+                <p>Uma breve descrição sobre o conteúdo deste card para atrair o leitor.</p>
+                <span class="read-more">Ler mais</span>
+            </a>
 
+            <a href="#" class="card">
+                <h2>Título do Card 2</h2>
+                <p>Uma breve descrição sobre o conteúdo deste card para atrair o leitor.</p>
+                <span class="read-more">Ler mais</span>
+            </a>
+        </main>
+    </div>
 </body>
+
 </html>
