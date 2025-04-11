@@ -1,201 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog Diva 🌿✨</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Henny+Penny&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isabelle Fazzion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #fff;
+            color: #1a1a1a;
+            text-align: center;
+        }
 
-    body {
-      font-family: 'Arial', cursive;
-      background: linear-gradient(135deg, #a8e6cf, #dcedc1);
-      color: #333;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+        header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            position: relative;
+        }
 
-    header {
-      background: #57cc99;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      position: relative;
-      animation: fadeIn 1.5s ease-in-out;
-    }
+        .social-icons {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
 
-    nav {
-      margin-top: 10px;
-    }
+        .social-icons a {
+            margin-left: 15px;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 20px;
+        }
 
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 60px 20px;
+            flex-wrap: wrap;
+        }
 
-    nav a:hover {
-      color: #caffbf;
-    }
+        .card {
+            border: 1px solid #ddd;
+            padding: 30px;
+            width: 300px;
+            text-align: left;
+            transition: box-shadow 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
 
-    .music-button {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background: #ffffffaa;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 50px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Henny Penny', cursive;
-      font-size: 1rem;
-      color: #57cc99;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-      transition: background 0.3s, transform 0.2s;
-    }
+        .card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
 
-    .music-button:hover {
-      background: #e0ffe7;
-      transform: scale(1.08);
-    }
+        .card h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 40px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    .card {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-      overflow: hidden;
-      transition: transform 0.4s, box-shadow 0.4s;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    }
-
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 20px;
-    }
-
-    .card-content h3 {
-      margin-bottom: 10px;
-      font-family: 'Fredoka One', cursive;
-      color: #57cc99;
-    }
-
-    .card-content p {
-      font-size: 1rem;
-      color: #666;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #57cc99;
-      color: white;
-      margin-top: 50px;
-      animation: fadeIn 2.5s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+        .card p {
+            font-size: 16px;
+        }
+    </style>
 </head>
-
 <body>
-  <header>
-    <button class="music-button" onclick="toggleMusic()">
-      🎶 Tocar Música
-    </button>
-    <h1>blog da diva ✨</h1>
-    <nav>
-      <a href="#">Início</a>
-      <a href="#">Sobre</a>
-      <a href="#">Contato</a>
-    </nav>
-  </header>
 
-  <main class="container">
-    <a href="#" class="card">
-      <img src="https://source.unsplash.com/400x300/?fashion" alt="Post fashion">
-      <div class="card-content">
-        <h3>quem eh a diva</h3>
-        <p>querido (a) alguma coisa,
-aqui quem escreve é alguém que não tem todas as respostas — e, pra falar a verdade, nem faz tanta questão assim. Prefere as perguntas bonitas, aquelas que fazem olhar pra dentro e pro lado de fora com curiosidade. Vive tropeçando nas próprias certezas, mas sempre levanta com um sorriso (às vezes meio torto, mas sincero).
-gosta das coisas simples: um café quentinho numa tarde fria, uma risada inesperada, o conforto de uma boa companhia. Não carrega pressa, só vontade de aproveitar o caminho com calma, sentindo cada passo. Cultiva sonhos, coleciona afetos e acredita, de verdade, que gentileza ainda é revolucionária.
-se você veio parar aqui, espero que se sinta em casa. 💛</p></p>
-      </div>
-    </a>
+    <header>
+        <h1>Isabelle Fazzion</h1>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </header>
 
-    <a href="#" class="card">
-      <img src="https://source.unsplash.com/400x300/?party" alt="Post festa">
-      <div class="card-content">
-        <h3>diva que namora diva</h3>
-        <p>falar da milena (minha mimi) eh como tentar descrever um abraço em palavras: por mais que eu tente, nunca vai ser o suficiente. ela tem uma calma que desacelera até os dias mais corridos, e uma alegria silenciosa que preenche os espaços sem fazer alarde. 
-        ela não precisa de grandes gestos pra marcar presença - basta estar ali, com aquele olhar que entende mais do que as palaras dizem, e um sorriso que, sem querer, muda o clima de qualquer lugar. mimi tem essa magia sutil de transformar o cotidiano em algo especial, como se enxergasse beleza nas coisas que a maioria deixa passar. 
-        o que mais me encanta nela eh a leveza e seu senso de humor. mas não aquela leveza que ignora as tempestades, mas a que dança com elas, sabe? a que entende que os ventos fortes tmabém fazem parte, mas nem por isso deixa de espalhar delicadeza pelo caminho.
-        é diificil não se sentir grata por cruzar com alguém assim. mimi eh dessas presenças que, de algum jeito, te lembram de que a vida ainda guarda muita doçura - e que vale a pena prestar atenção.</p>
-      </div>
-    </a>
-  </main>
+    <section class="cards">
+        <a href="pagina1.html" class="card">
+            <h2>Título do Primeiro Card</h2>
+            <p>Descrição breve do conteúdo. Clique para saber mais detalhes sobre este tema.</p>
+        </a>
 
-  <footer>
-    <p>feito com amor por uma diva para divas ✨</p>
-  </footer>
+        <a href="pagina2.html" class="card">
+            <h2>Título do Segundo Card</h2>
+            <p>Descrição breve do conteúdo. Clique para descobrir mais informações interessantes.</p>
+        </a>
+    </section>
 
-  <audio id="bg-music" loop>
-    <source src="https://example.com/meiga-e-abusada.mp3" type="audio/mpeg">
-    Seu navegador não suporta o elemento de áudio.
-  </audio>
-
-  <script>
-    function toggleMusic() {
-      const music = document.getElementById('bg-music');
-      if (music.paused) {
-        music.play();
-      } else {
-        music.pause();
-      }
-    }
-  </script>
 </body>
-
 </html>
