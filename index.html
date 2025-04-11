@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Diva Suprema 💚</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -16,7 +17,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Fredoka One', cursive;
       overflow: hidden;
     }
 
@@ -34,7 +35,24 @@
       text-shadow: 1px 1px 3px #00000066;
     }
 
-    /* Animação de brilho diva */
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      background-color: white;
+      color: #3BAA5C;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.4);
+    }
+
     @keyframes brilha {
       0% {
         text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
@@ -44,7 +62,6 @@
       }
     }
 
-    /* Animação de deslizar suave */
     @keyframes desliza {
       0% {
         transform: translateX(-10px);
@@ -57,7 +74,6 @@
       }
     }
 
-    /* Detalhe extra: confete animado (opcional pra ficar ainda mais diva) */
     .confete {
       position: absolute;
       width: 10px;
@@ -81,14 +97,29 @@
   </style>
 </head>
 <body>
-  <h1> bebelle por onde passa meio que diva 💖 </h1>
-  <p> brilho próprio, sem precisar de holofotes ✨</p>
+  <h1> brilho próprio, sem precisar de holofotes ✨</h1>
+  <p> bebelle por onde passa sempre diva 💖</p>
+  <button onclick="tocarMusica()">Toca o hino!</button>
 
   <!-- Confetes -->
   <div class="confete" style="left: 20%; animation-delay: 0s;"></div>
   <div class="confete" style="left: 40%; animation-delay: 1s;"></div>
   <div class="confete" style="left: 60%; animation-delay: 2s;"></div>
   <div class="confete" style="left: 80%; animation-delay: 3s;"></div>
+
+  <!-- Música de fundo -->
+  <audio id="musica">
+    <source src="https://www.mboxdrive.com/Anitta%20-%20Meiga%20e%20Abusada.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio 😢
+  </audio>
+
+  <script>
+    function tocarMusica() {
+      const musica = document.getElementById('musica');
+      musica.play();
+    }
+  </script>
 </body>
 </html>
+
 
