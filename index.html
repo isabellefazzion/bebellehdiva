@@ -1,125 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Diva Suprema 💚</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Diva 🌿✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #3BAA5C, #5fd58c);
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #3BAA5C;
       color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      padding: 20px 0;
       text-align: center;
-      font-family: 'Fredoka One', cursive;
-      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    h1 {
-      font-size: 3rem;
-      margin: 10px;
-      animation: brilha 2s infinite alternate;
-      text-shadow: 2px 2px 4px #00000088;
+    nav {
+      margin-top: 10px;
     }
 
-    p {
-      font-size: 1.5rem;
-      margin: 10px;
-      animation: desliza 3s infinite ease-in-out;
-      text-shadow: 1px 1px 3px #00000066;
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 1.2rem;
-      background-color: white;
-      color: #3BAA5C;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      transition: transform 0.2s, box-shadow 0.2s;
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
 
-    button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 10px rgba(0,0,0,0.4);
-    }
-
-    @keyframes brilha {
-      0% {
-        text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-      }
-      100% {
-        text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #3BAA5C;
-      }
-    }
-
-    @keyframes desliza {
-      0% {
-        transform: translateX(-10px);
-      }
-      50% {
-        transform: translateX(10px);
-      }
-      100% {
-        transform: translateX(-10px);
-      }
-    }
-
-    .confete {
-      position: absolute;
-      width: 10px;
-      height: 10px;
+    .card {
       background: white;
-      opacity: 0.7;
-      border-radius: 50%;
-      animation: cair 5s linear infinite;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    @keyframes cair {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-      }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      margin-bottom: 10px;
+      font-family: 'Fredoka One', cursive;
+      color: #3BAA5C;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #3BAA5C;
+      color: white;
+      margin-top: 40px;
     }
   </style>
 </head>
+
 <body>
-  <h1> brilho próprio, sem precisar de holofotes ✨</h1>
-  <p> bebelle por onde passa sempre diva 💖</p>
-  <button onclick="tocarMusica()">Toca o hino!</button>
+  <header>
+    <h1>Blog da Diva 🌿✨</h1>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
 
-  <!-- Confetes -->
-  <div class="confete" style="left: 20%; animation-delay: 0s;"></div>
-  <div class="confete" style="left: 40%; animation-delay: 1s;"></div>
-  <div class="confete" style="left: 60%; animation-delay: 2s;"></div>
-  <div class="confete" style="left: 80%; animation-delay: 3s;"></div>
+  <main class="container">
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?fashion" alt="Post fashion">
+      <div class="card-content">
+        <h3>Quem é a diva?
+            <p>querido (a) alguma coisa,
 
-  <!-- Música de fundo -->
-  <audio id="musica">
-    <source src="https://www.mboxdrive.com/Anitta%20-%20Meiga%20e%20Abusada.mp3" type="audio/mpeg">
-    Seu navegador não suporta áudio 😢
-  </audio>
+aqui quem escreve é alguém que não tem todas as respostas — e, pra falar a verdade, nem faz tanta questão assim. Prefere as perguntas bonitas, aquelas que fazem olhar pra dentro e pro lado de fora com curiosidade. Vive tropeçando nas próprias certezas, mas sempre levanta com um sorriso (às vezes meio torto, mas sincero).
 
-  <script>
-    function tocarMusica() {
-      const musica = document.getElementById('musica');
-      musica.play();
-    }
-  </script>
+gosta das coisas simples: um café quentinho numa tarde fria, uma risada inesperada, o conforto de uma boa companhia. Não carrega pressa, só vontade de aproveitar o caminho com calma, sentindo cada passo. Cultiva sonhos, coleciona afetos e acredita, de verdade, que gentileza ainda é revolucionária.
+
+se você veio parar aqui, espero que se sinta em casa. 💛</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?party" alt="Post festa">
+      <div class="card-content">
+        <h3>Diva que namora diva</h3>
+        <p> falar da milena (minha mimi) eh como tentar descrever um abraço em palavras: por mais que eu tente, nunca vai ser o suficiente. ela tem uma calma que desacelera até os dias mais corridos, e uma alegria silenciosa que preenche os espaços sem fazer alarde. 
+        ela não precisa de grandes gestos pra marcar presença - basta estar ali, com aquele olhar que entende mais do que as palaras dizem, e um sorriso que, sem querer, muda o clima de qualquer lugar. mimi tem essa magia sutil de transformar o cotidiano em algo especial, como se enxergasse beleza nas coisas que a maioria deixa passar. 
+        o que mais me encanta nela eh a leveza e seu senso de humor. mas não aquela leveza que ignora as tempestades, mas a que dança com elas, sabe? a que entende que os ventos fortes tmabém fazem parte, mas nem por isso deixa de espalhar delicadeza pelo caminho.
+        é diificil não se sentir grata por cruzar com alguém assim. mimi eh dessas presenças que, de algum jeito, te lembram de que a vida ainda guarda muita doçura - e que vale a pena prestar atenção, </p>
+      </div>
+    </div>
+
+
+  <footer>
+    <p>Feito com 💚 por uma diva para divas ✨</p>
+  </footer>
 </body>
+
 </html>
-
-
