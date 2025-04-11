@@ -1,34 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bebelleh Diva</title>
-    <style>
-        body {
-            background-color: #fce4ec;
-            color: #880e4f;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin: 10px;
-        }
-        p {
-            font-size: 1.5rem;
-            margin: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diva Suprema 💚</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #3BAA5C, #5fd58c);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 10px;
+      animation: brilha 2s infinite alternate;
+      text-shadow: 2px 2px 4px #00000088;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin: 10px;
+      animation: desliza 3s infinite ease-in-out;
+      text-shadow: 1px 1px 3px #00000066;
+    }
+
+    /* Animação de brilho diva */
+    @keyframes brilha {
+      0% {
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+      }
+      100% {
+        text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #3BAA5C;
+      }
+    }
+
+    /* Animação de deslizar suave */
+    @keyframes desliza {
+      0% {
+        transform: translateX(-10px);
+      }
+      50% {
+        transform: translateX(10px);
+      }
+      100% {
+        transform: translateX(-10px);
+      }
+    }
+
+    /* Detalhe extra: confete animado (opcional pra ficar ainda mais diva) */
+    .confete {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: white;
+      opacity: 0.7;
+      border-radius: 50%;
+      animation: cair 5s linear infinite;
+    }
+
+    @keyframes cair {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>bebelle por onde passa meio que diva 💖</h1>
-    <p>espalhando verde lésbico por onde passa </p>
+  <h1> bebelle por onde passa meio que diva 💖 </h1>
+  <p> brilho próprio, sem precisar de holofotes ✨</p>
+
+  <!-- Confetes -->
+  <div class="confete" style="left: 20%; animation-delay: 0s;"></div>
+  <div class="confete" style="left: 40%; animation-delay: 1s;"></div>
+  <div class="confete" style="left: 60%; animation-delay: 2s;"></div>
+  <div class="confete" style="left: 80%; animation-delay: 3s;"></div>
 </body>
 </html>
+
